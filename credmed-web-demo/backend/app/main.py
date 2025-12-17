@@ -1,0 +1,14 @@
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from app.db import create_db_and_tables
+from app.api import routes
+import contextlib
+
+@contextlib.asynccontextmanager
+async def lifespan(app: FastAPI):
+    create_db_and_tables()
+    yield
+
+app = FastAPI(title="CredMed", lifespan=lifespan)
+app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_credentials=True, allow_methods=["*"], allow_headers=["*"])
+app.include_router(routes.router, prefix="/api")

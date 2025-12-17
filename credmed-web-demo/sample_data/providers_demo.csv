@@ -1,0 +1,5 @@
+first_name,last_name,npi,license_number,address,specialty
+James,Smith,1234567890,A12345,123 Main St Los Angeles CA,Cardiology
+Maria,Garcia,1111111111,B98765,456 Oak Ave New York NY,Dermatology
+John,Doe,9999999999,EXP123,PO BOX 123 Phoenix AZ,General
+Suspicious,Actor,1234567899,C55555,789 Bad Way Chicago IL,Surgery
